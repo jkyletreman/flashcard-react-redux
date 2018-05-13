@@ -15,6 +15,7 @@ const store = createStore(rootReducer);
 store.subscribe(() => {
   console.log('store', store.getState())
 });
+store.dispatch(setStack({ id: 0, title: 'example', cards: [] }));
 
 ReactDOM.render(
   <BrowserRouter>
