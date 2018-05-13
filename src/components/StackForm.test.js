@@ -2,7 +2,10 @@ import React from "react";
 import { shallow } from "enzyme";
 import { StackForm } from "./StackForm";
 import "../setupTests";
-import { stacks } from '../data/fixtures'
+
+const changeTitle = 'change title';
+const changePrompt = 'change prompt';
+const changeAnswer = 'change answer';
 
 describe("StackForm", () => {
   const stackForm = shallow(<StackForm />);
@@ -30,11 +33,11 @@ describe("StackForm", () => {
   describe('and updating the title', () => {
     beforeEach(() => {
       // need to simulate the target.value from our onChange in the form
-      stackForm.find('FormControl').simulate('change', { target: { value: 'change title' }})
+      stackForm.find('FormControl').simulate('change', { target: { value: changeTitle }})
     })
 
     it("updates the title in the state", () => {
-      expect(stackForm.state().title).toEqual('change title')
+      expect(stackForm.state().title).toEqual(changeTitle)
     })
   });
 
@@ -42,6 +45,10 @@ describe("StackForm", () => {
     beforeEach(() => {
       stackForm.find("Button").at(0).simulate('click');
     });
+
+    afterEach(() => {
+      stackForm.setState({ cards: [] });
+    })
 
     it("adds a new card to the state", () => {
       expect(stackForm.state().cards.length).toEqual(1);
@@ -53,6 +60,27 @@ describe("StackForm", () => {
 
     it("renders the answer section", () => {
       expect(stackForm.find("ControlLabel").at(2).props().children).toEqual("Answer:")
+    })
+
+    describe("and updating the card prompt", () => {
+      beforeEach(() => {
+        // updating the input field of prompt
+        stackForm.find('FormControl').at(1).simulate('change', { target: { value: changePrompt }})
+      });
+
+      it("updates the prompt in the state", () => {
+        expect(stackForm.state().cards[0].prompt).toEqual(changePrompt)
+      })
+
+      describe("and updating the card answer", () => {
+        beforeEach(() => {
+          stackForm.find('FormControl').at(2).simulate('change', { target: { value: changeAnswer }});
+        });
+
+        it("updates the answer in the state", () => {
+          expect(stackForm.state().cards[0].answer).toEqual(changeAnswer)
+        })
+      })
     })
   })
 })
