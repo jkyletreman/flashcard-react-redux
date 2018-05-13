@@ -22,5 +22,19 @@ describe("Card", () => {
 
   it("applies the `text-hideen` class to the card answer", () => {
     expect(card.find('.card-answer h4').hasClass('text-hidden')).toBe(true)
+  });
+
+  describe("when clicking on the card", () => {
+    beforeEach(() => {
+      card.simulate('click');
+    })
+
+    it("updates `reveal` to be `true`", () => {
+      expect(card.state().reveal).toBe(true);
+    });
+
+    it("applies the `text-reveled` class to the answer", () => {
+      expect(card.find('.card-answer h4').hasClass('text-revealed')).toBe(true);
+    })
   })
 });
