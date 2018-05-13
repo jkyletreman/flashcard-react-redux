@@ -20,10 +20,10 @@ const loadStacks = (stacks) => {
   }
 }
 
-const addStack = (stack) => {
+const addStack = (stacks) => {
   return {
     type: ADD_STACK,
-    stack
+    stacks
   }
 }
 
