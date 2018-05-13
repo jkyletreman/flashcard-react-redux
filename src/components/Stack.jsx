@@ -9,6 +9,16 @@ class Stack extends Component {
       <div>
         <Link to='/'>Home</Link>
           <h3>{this.props.stack.title}</h3>
+          <br />
+          {
+            this.props.stack.cards.map(card => {
+              return (
+                <div key={card.id}>
+                  {card.prompt}
+                </div>
+              )
+            })
+          }
       </div>
     )
   }
