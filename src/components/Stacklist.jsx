@@ -8,9 +8,7 @@ import { setStack, loadStacks } from "../actions";
 class Stacklist extends Component {
   componentDidMount() {
     // prevents this from firing every timet the component is rendered
-    if (this.props.stacks.length === 0) {
-      this.props.loadStacks(stacks);
-    }
+    if (this.props.stacks.length === 0) this.props.loadStacks(stacks);
   }
   render() {
     return (
