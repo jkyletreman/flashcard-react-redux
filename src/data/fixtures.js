@@ -6,3 +6,5 @@ export const stack = {
     { id: 1, prompt: "test prompt2", answer: "test answer2" }
   ]
 };
+
+export const stacks = [stack];
