@@ -5,7 +5,7 @@ import stacks from "../data/stacks.json";
 import { Link } from "react-router-dom";
 import { setStack, loadStacks } from "../actions";
 
-class Stacklist extends Component {
+export class Stacklist extends Component {
   componentDidMount() {
     // prevents this from firing every timet the component is rendered
     if (this.props.stacks.length === 0) this.props.loadStacks(stacks);
