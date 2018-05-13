@@ -1,0 +1,14 @@
+import React, { Component } from "react";
+import stacks from "./data/stacks.json";
+
+export default class Stacklist extends Component {
+  render() {
+    return (
+      <div>
+        {stacks.map(stack => {
+          return <h4>{stack.title}</h4>;
+        })}
+      </div>
+    );
+  }
+}
