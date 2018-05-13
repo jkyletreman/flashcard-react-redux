@@ -19,4 +19,8 @@ describe("Card", () => {
   it("renders the card answer", () => {
     expect(card.find(".card-answer h4").text()).toEqual(props.card.answer);
   });
+
+  it("applies the `text-hideen` class to the card answer", () => {
+    expect(card.find('.card-answer h4').hasClass('text-hidden')).toBe(true)
+  })
 });
