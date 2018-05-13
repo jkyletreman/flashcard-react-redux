@@ -9,7 +9,7 @@ class Stack extends Component {
     return (
       <div>
         <Link to="/" className="link-home">
-          <h4>Home</h4>
+          <h3>Home</h3>
         </Link>
         <h3>{title}</h3>
         <br />
