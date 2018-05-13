@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom';
 
 class Stack extends Component {
   render() {
-    console.log(this.props)
+    const { title, cards } = this.props.stack;
     return (
       <div>
         <Link to='/'>Home</Link>
-          <h3>{this.props.stack.title}</h3>
+          <h3>{title}</h3>
           <br />
           {
-            this.props.stack.cards.map(card => {
+            cards.map(card => {
               return (
                 <div key={card.id}>
                   {card.prompt}
