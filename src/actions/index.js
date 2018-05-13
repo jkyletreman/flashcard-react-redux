@@ -12,11 +12,11 @@ const setStack = (stack) => {
   };
 };
 
-const loadStack = (stacks) => {
+const loadStacks = (stacks) => {
   return {
     type: LOAD_STACKS,
     stacks
   }
 }
 
-export { setStack, SET_STACK, LOAD_STACKS };
+export { setStack, loadStacks, SET_STACK, LOAD_STACKS };
