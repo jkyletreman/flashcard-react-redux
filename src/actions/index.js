@@ -12,7 +12,7 @@ const setStack = (stack) => {
   };
 };
 
-const loadStack = (stack) => {
+const loadStack = (stacks) => {
   return {
     type: LOAD_STACKS,
     stacks

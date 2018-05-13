@@ -23,7 +23,7 @@ class Stack extends Component {
 // takes state as parameter
 const mapStateToProps = state => {
   // want to return a object that we want to be the props
-  return { stack: state };
+  return { stack: state.stack };
 };
 
 export default connect(mapStateToProps, null)(Stack);
