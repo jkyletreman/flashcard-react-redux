@@ -26,6 +26,11 @@ class StackForm extends Component {
 
     this.setState({ cards });
   }
+
+  addStack = () => {
+    console.log('working');
+  }
+
   render() {
     return (
       <div>
@@ -66,6 +71,8 @@ class StackForm extends Component {
         </Form>
         <br />
         <Button onClick={() => this.addCard()}>Add Card</Button>
+        {' '}
+        <Button onClick={() => this.addStack()}>Save and Add the Stack</Button>
       </div>
     );
   }
