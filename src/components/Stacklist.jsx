@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import stacks from "./data/stacks.json";
+import stacks from "../data/stacks.json";
 
 export default class Stacklist extends Component {
   render() {
