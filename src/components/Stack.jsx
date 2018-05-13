@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-export default class Stack extends Component {
+class Stack extends Component {
   render() {
+    console.log(this.props)
     return (
       <div>
         <Link to='/'>Home</Link>
@@ -11,3 +13,10 @@ export default class Stack extends Component {
     )
   }
 }
+// takes state as parameter
+const mapStateToProps = (state) => {
+  // want to return a object that we want to be the props
+  return { stack: state }
+}
+
+export default connect(mapStateToProps, null)(Stack);
