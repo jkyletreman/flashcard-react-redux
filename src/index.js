@@ -6,8 +6,15 @@ import { BrowserRouter, Switch, Route } from "react-router-dom";
 import rootReducer from './reducers';
 import App from "./components/App";
 import Stack from "./components/Stack";
+import { setStack } from './actions';
+
 
 const store = createStore(rootReducer);
+// fire off code when store updates
+// code with getState of the store
+store.subscribe(() => {
+  console.log('store', store.getState())
+});
 
 ReactDOM.render(
   <BrowserRouter>
