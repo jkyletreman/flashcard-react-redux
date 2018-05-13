@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import stacks from "../data/stacks.json";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export default class Stacklist extends Component {
   render() {
@@ -11,7 +11,8 @@ export default class Stacklist extends Component {
             <Link to="/stack">
               <h4 key={stack.id}>{stack.title}</h4>
             </Link>
-        )})}
+          );
+        })}
       </div>
     );
   }
