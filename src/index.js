@@ -25,7 +25,7 @@ ReactDOM.render(
       <Switch>
         <Route exact path="/" component={App} />
         <Route path="/stack" component={Stack} />
-        <Route path="/stack_form" component={StackFrom} />
+        <Route path="/stack_form" component={StackForm} />
       </Switch>
     </BrowserRouter>
   </Provider>,
