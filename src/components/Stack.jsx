@@ -8,7 +8,7 @@ class Stack extends Component {
     return (
       <div>
         <Link to='/'>Home</Link>
-          <h3>example title</h3>
+          <h3>{this.props.stack.title}</h3>
       </div>
     )
   }
