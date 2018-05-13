@@ -1,5 +1,6 @@
 const SET_STACK = 'SET_STACK'
 const LOAD_STACKS = 'LOAD_STACKS'
+const ADD_STACK = 'ADD_STACK'
 // function is a action creator, which returns the action
 const setStack = (stack) => {
   return {
@@ -19,4 +20,11 @@ const loadStacks = (stacks) => {
   }
 }
 
-export { setStack, loadStacks, SET_STACK, LOAD_STACKS };
+const addStack = (stack) => {
+  return {
+    type: ADD_STACK,
+    stack
+  }
+}
+
+export { setStack, loadStacks, addStack, ADD_STACK, SET_STACK, LOAD_STACKS };
