@@ -3,13 +3,19 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import stacks from "../data/stacks.json";
 import { Link } from "react-router-dom";
-import { setStack } from "../actions";
+import { setStack, loadStacks } from "../actions";
 
 class Stacklist extends Component {
+  componentDidMount() {
+    // prevents this from firing every timet the component is rendered
+    if (this.props.stacks.length === 0) {
+      this.props.loadStacks(stacks);
+    }
+  }
   render() {
     return (
       <div>
-        {stacks.map(stack => {
+        {this.props.stacks.map(stack => {
           return (
             <Link
               to="/stack"
@@ -27,6 +33,9 @@ class Stacklist extends Component {
     );
   }
 }
+const mapStateToProps = (state) => {
+  return { stacks: state.stacks }
+}
 // redux will autonmatically recognize this function
 // const mapDispatchToProps = dispatch => {
 //   // add action creators you want to bind
@@ -39,4 +48,4 @@ class Stacklist extends Component {
 // returns a function that connects component
 
 // short cut syntax, redux can take the action directly instead of needing to bind the action creators
-export default connect(null, { setStack })(Stacklist);
+export default connect(mapStateToProps, { setStack, loadStacks })(Stacklist);
