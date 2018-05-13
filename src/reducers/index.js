@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
-import { SET_STACK, LOAD_STACKS, ADD_STACKS } from "../actions";
+import { SET_STACK, LOAD_STACKS, ADD_STACK } from "../actions";
 // reducer has 1 primary goal, compose a object to represent how the state should be updated
 // state uses the object to represent the data in the reducer
 // each reducer takes two paramaters the first is the redux state at a current time, the second is the action
@@ -17,7 +17,7 @@ const stacks = (state = [], action) => {
     case LOAD_STACKS:
       return action.stacks;
     case ADD_STACK:
-      return [...state, { action.stack, id: state.length }];
+      return [...state, { ...action.stacks, id: state.length }];
     default:
       return state;
   }
