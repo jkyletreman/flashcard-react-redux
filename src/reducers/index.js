@@ -10,3 +10,5 @@ const stack = (state = {}, action) => {
       return state;
   }
 }
+
+export default stack;
