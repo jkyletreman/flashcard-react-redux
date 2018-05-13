@@ -6,7 +6,7 @@ export default class Stacklist extends Component {
     return (
       <div>
         {stacks.map(stack => {
-          return <h4>{stack.title}</h4>;
+          return <h4 key={stack.id}>{stack.title}</h4>;
         })}
       </div>
     );
