@@ -28,7 +28,7 @@ class StackForm extends Component {
           <FormGroup>
             <ControlLabel>Title:</ControlLabel>
             {' '}
-            <FormControl />
+            <FormControl onChange={e => { this.setState({ title: e.target.value })}}/>
           </FormGroup>
           {
             this.state.cards.map(card => {
