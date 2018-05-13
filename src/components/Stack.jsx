@@ -8,7 +8,7 @@ class Stack extends Component {
     const { title, cards } = this.props.stack;
     return (
       <div>
-        <Link to='/'>Home</Link>
+        <Link to='/' className="link-home">Home</Link>
           <h3>{title}</h3>
           <br />
           {
