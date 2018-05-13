@@ -11,4 +11,8 @@ describe("Card", () => {
   it('sets `reveal` to be `false`', () => {
     expect(card.state().reveal).toBe(false);
   })
+
+  it("renders the card prompt", () => {
+    expect(card.find('.card-prompt h4').text()).toEqual(props.card.prompt)
+  })
 })
